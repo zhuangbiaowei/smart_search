@@ -5,7 +5,6 @@ require "readline"
 engine = SmartAgent::Engine.new("./config/agent.yml")
 agent = engine.build_agent(:smart_search, tools: [:read_file, :write_file], mcp_servers: [:all])
 
-=begin
 status = nil
 agent.on_reasoning do |reasoning_content|
   if status != :reasoning
@@ -34,7 +33,6 @@ end
 agent.on_tool_call do |msg|
   puts "工具调用： #{msg}"
 end
-=end
 
 class Interaction
   def initialize(agent)

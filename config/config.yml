@@ -14,7 +14,12 @@ llms:
     default_model: deepseek-chat
   llamacpp:
     adapter: openai
-    url: http://localhost:8080/    
+    url: http://localhost:8080/
+  BigModel:
+    adapter: openai
+    url: https://open.bigmodel.cn/api/paas/
+    version: v4
+    api_key: ENV["GLM_KEY"]
 default_llm: siliconflow
 worker_path: "./agents/workers"
 template_path: "./agents/templates"

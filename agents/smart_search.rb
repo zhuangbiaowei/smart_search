@@ -19,7 +19,7 @@ SmartAgent.define :smart_search do
   puts "\n\n第三阶段：汇总信息"
   params[:text] = question
   result = call_worker(:summary, params, with_tools: false, with_history: true)
-  file_name = "report_#{Time.now.to_i}.md"
+  file_name = "reports/report_#{Time.now.to_i}.md"
   f = File.new(file_name, "w")
   f.puts(result.content)
   f.close
